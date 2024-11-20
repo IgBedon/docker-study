@@ -66,19 +66,6 @@ docker tag [imageID] [repository:tag]
 # Example: docker tag abc123 my-image:1.0
 ```
 
-### Push an Image to a Registry
-Send an image to a remote registry like Docker Hub.
-```bash
-docker push [repository:tag]
-# Example: docker push my-image:1.0
-```
-
-### Pull an Image from a Registry
-Download an image from a remote registry.
-```bash
-docker pull [repository:tag]
-# Example: docker pull nginx:latest
-```
 
 ## Debugging and Logs
 #### Show Logs from a Container
@@ -122,4 +109,31 @@ docker system prune
 View detailed information about Docker, including containers, images, and resources.
 ```bash
 docker system info
+```
+
+## Docker Hub
+### Login
+Login in Docker Hub
+```bash
+docker login
+```
+
+### Logout
+Logout in Docker Hub
+```bash
+docker logout
+```
+
+### Push an Image to a Registry
+Send an image to a remote registry like Docker Hub.
+```bash
+docker push [repository:tag]
+# Example: docker push my-image:1.0
+```
+
+### Pull an Image from a Registry
+Download an image from a remote registry.
+```bash
+docker pull [repository:tag]
+# Example: docker pull nginx:latest
 ```
