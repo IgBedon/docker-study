@@ -66,6 +66,47 @@ docker tag [imageID] [repository:tag]
 # Example: docker tag abc123 my-image:1.0
 ```
 
+## Managing Volumes
+Docker volumes are used to persist data across container restarts.
+
+### Create an Anonymous Volume
+An anonymous volume is created automatically when you use the -v flag without a name.
+```bash
+docker run -v [/container/path] [imageID]
+# Example: docker run -v /app/data [imageID]
+# The volume name will be auto-generated.
+```
+
+### Create a Named Volume
+```bash
+docker volume create [volumeName]
+# Example: docker volume create my-volume
+docker run -v [volumeName]:[container/path] [imageID]
+```
+
+### Create a Bind Mount
+Bind mounts link a host directory to a container directory.
+```bash
+docker run -v [/host/path]:[/container/path] [imageID]
+# Example: docker run -v /home/user/data:/app/data nginx
+```
+
+### List All Volumes
+```bash
+docker volume ls
+```
+
+### Remove a Volume
+You can use -f to force removal.
+```bash
+docker volume rm [volumeName]
+```
+
+### Prune Unused Volumes
+Remove all unused volumes to free up space.
+```bash
+docker volume prune
+```
 
 ## Debugging and Logs
 #### Show Logs from a Container
